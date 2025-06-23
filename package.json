@@ -4,7 +4,6 @@
   "description": "pour la purge uniquement",
   "autor": "ghost Willy's",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "start": "node index.js"
   },
