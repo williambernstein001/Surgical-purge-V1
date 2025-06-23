@@ -1,0 +1,16 @@
+```
+{
+  "name": "Surgical-purge-V1",
+  "version": "1.0.0 béta",
+  "autor": "ghost Willy's",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@adiwajshing/baileys": "^4.4.0",
+    "pino": "^8.0.0" 
+  }
+}
+```
