@@ -10,7 +10,7 @@
   },
   "keywords": ["whatsapp","purge","surgical","ghost"],
   "dependencies": {
-    "@adiwajshing/baileys": "^4.4.0",
+    "@whiskeysockets/baileys": "^6.6.0",
     "pino": "^8.0.0" 
   }
 }
