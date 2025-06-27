@@ -1,5 +1,5 @@
 //index.js
-import makeWASocket, { useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion, delay } from "@adiwajshing/baileys";
+import makeWASocket, { useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion, delay } from "@whiskeysockets/baileys";
 import pino from "pino";
 
 const PREFIX = "😈";
