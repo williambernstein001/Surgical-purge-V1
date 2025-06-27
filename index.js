@@ -1,3 +1,4 @@
+//index.js
 import makeWASocket, { useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion, delay } from "@whiskeysocket/baileys";
 import pino from "pino";
 
@@ -7,7 +8,7 @@ async function startBot() {
   const { version, isLatest } = await fetchLatestBaileysVersion();
   console.log(`Using WA v${version.join('.')}, isLatest: ${isLatest}`);
 
-  const { state, saveCreds } = await useMultiFileAuthState("auth_info");
+  const { state, saveCreds } = await useMultiFileAuthState("./auth_info");
 
   const sock = makeWASocket({
     version,
