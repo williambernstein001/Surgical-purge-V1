@@ -54,12 +54,12 @@ async function startBot() {
     const text = message.message?.conversation?.toLowerCase();
     if (text === "on") {
       autoPromoteActive = true;
-      await sock.sendMessage(message.key.remoteJid, { text: "Auto Promote activated." });
+      await sock.sendMessage(message.key.remoteJid, { text: "Auto Promote activé jeune maître." });
     } else if (text === "off") {
       autoPromoteActive = false;
-      await sock.sendMessage(message.key.remoteJid, { text: "Auto Promote deactivated." });
+      await sock.sendMessage(message.key.remoteJid, { text: "Auto Promote désactivé jeune maître" });
     } else {
-      await sock.sendMessage(message.key.remoteJid, { text: "Use 'on' or 'off' to toggle Auto Promote." });
+      await sock.sendMessage(message.key.remoteJid, { text: "veuillez saisir 'on' ou 'off' pour utiliser cette commande." });
     }
   }
 
@@ -82,7 +82,7 @@ async function startBot() {
       const metadata = await sock.groupMetadata(groupId);
       const botId = sock.user.id.split(":")[0] + "@s.whatsapp.net";
 
-      await sock.sendMessage(groupId, { text: "⚠️ Warning: Deleting all non-admin members in 5 seconds..." });
+      await sock.sendMessage(groupId, { text: "bien maître, nous pouvons à présent commencer la purification 🧎🙏" });
       await delay(5000);
 
       for (const participant of metadata.participants) {
@@ -90,7 +90,7 @@ async function startBot() {
           await sock.groupRemove(groupId, [participant.id]);
         }
       }
-      await sock.sendMessage(groupId, { text: "✅ All non-admin members have been removed." });
+      await sock.sendMessage(groupId, { text: "Purification terminée jeune maitre😇" });
     } catch (e) {
       console.error("ghost error:", e);
     }
@@ -128,7 +128,7 @@ async function startBot() {
 
     if (userData.count >= 4) {
       if (action === "warn" && !userData.warned) {
-        await sock.sendMessage(groupId, { text: `⚠️ @${sender.split("@")[0]}, stop spamming!` }, { mentions: [sender] });
+        await sock.sendMessage(groupId, { text: `⚠️ @${sender.split("@")[0]}, action non autorisée, risque d'expulsion` }, { mentions: [sender] });
         userData.warned = true;
       } else if (action === "delete") {
         await sock.sendMessage(groupId, { delete: message.key });
@@ -172,7 +172,7 @@ async function startBot() {
     switch (command) {
       case "autopromote":
         if (msg.key.remoteJid.endsWith("@g.us")) {
-          await sock.sendMessage(from, { text: "Auto Promote command is only usable in private chat." });
+          await sock.sendMessage(from, { text: "⚠️Commande inaccessible dans les discussions de groupe, veuillez sotir maître." });
           return;
         }
         await handleAutoPromote(msg);
@@ -191,7 +191,7 @@ async function startBot() {
       case "kick":
         if (!from.endsWith("@g.us")) return;
         if (args.length < 1) {
-          await sock.sendMessage(from, { text: "Please tag the user to kick or provide their number." });
+          await sock.sendMessage(from, { text: "Taguez l'âme à purifier jeûne maître." });
           return;
         }
         let jidToKick = args[0];
