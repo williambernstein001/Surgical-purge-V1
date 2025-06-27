@@ -1,6 +1,4 @@
-```js
-// index.js
-import makeWASocket, { useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion, delay } from "@adiwajshing/baileys";
+import makeWASocket, { useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion, delay } from "@whiskeysoket/baileys";
 import pino from "pino";
 
 const PREFIX = "😈";
@@ -217,4 +215,4 @@ async function startBot() {
 }
 
 startBot().catch(console.error);
-```
+
